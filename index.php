@@ -5,14 +5,14 @@ echo <<<EOT
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to dev.webt.local</title>
+    <title>Welcome to Acolytes of Ash</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="path/to/bootstrap.min.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <!-- Brand/logo (optional) -->
-        <a class="navbar-brand" href="#">My Website</a>
+        <a class="navbar-brand" href="#">Acolytes of Ash</a>
         
         <!-- Hamburger button (collapsed on small screens) -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
