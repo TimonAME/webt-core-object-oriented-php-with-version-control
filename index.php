@@ -1,10 +1,21 @@
 <?php
 require_once "src/video.php";
+require_once "src/YouTube.php";
+require_once "src/Vimeo.php";
 
-$vid1 = new video("McLaren 765LT *340km/h* REVIEW on AUTOBAHN by AutoTopNL", "https://www.youtube.com/watch?v=5WM9XCnxckM&t=483s&ab_channel=AutoTopNL", '<iframe width="425" height="239" src="https://www.youtube.com/embed/5WM9XCnxckM?si=SYnqHCS3H4vbLj0D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
-$vid2 = new video("Launching Cars With A Giant Slingshot", "https://www.youtube.com/watch?v=-2d-bN0o2_E&ab_channel=WhistlinDiesel", '<iframe width="425" height="239" src="https://www.youtube.com/embed/-2d-bN0o2_E?si=6_Nc7yQF7FyNHLaT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
-$vid3 = new video("How a Formula 1 Race Car Works", "https://www.youtube.com/watch?v=V7707zEX9X4&ab_channel=Animagraffs", '<iframe width="425" height="239" src="https://www.youtube.com/embed/V7707zEX9X4?si=m_KHgCHJc48v5EaN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
+$vid1 = new YouTube("McLaren 765LT *340km/h* REVIEW on AUTOBAHN by AutoTopNL", "https://www.youtube.com/watch?v=5WM9XCnxckM&t=483s&ab_channel=AutoTopNL");
+$vid2 = new YouTube("Launching Cars With A Giant Slingshot", "https://www.youtube.com/watch?v=-2d-bN0o2_E&ab_channel=WhistlinDiesel");
+$vid3 = new YouTube("How a Formula 1 Race Car Works", "https://www.youtube.com/watch?v=V7707zEX9X4&ab_channel=Animagraffs");
+$vid4 = new YouTube("20 WOMEN VS 1 SIDEMEN: SPEED EDITION", "https://www.youtube.com/watch?v=m7YSTtiPMl4&t=3514s&ab_channel=Sidemen");
+$vid5 = new YouTube("Frauen mit Wählscheibentelefon klären", "https://www.youtube.com/watch?v=aEE9v3wb6bg&ab_channel=Iratsch");
+$vid6 = new YouTube("1 Tag mit einem Callboy: Frauen bezahlen ihn für Sex", "https://www.youtube.com/watch?v=ZA82TG-v9L4&ab_channel=tomatolix");
 
+$vimeo1 = new Vimeo("Close The Gap", "https://vimeo.com/869687763");
+$vimeo2 = new Vimeo("They Dance With Their Heads", "https://vimeo.com/868399826");
+$vimeo3 = new Vimeo("PLANTARIUM - animated short (2020)", "https://vimeo.com/868314085");
+$vimeo4 = new Vimeo("Austyn Gillette ‘Leaning into your Palms’", "https://vimeo.com/870265868");
+$vimeo5 = new Vimeo("Andy Shauf - Clove Cigarette", "https://vimeo.com/456459957");
+$vimeo6 = new Vimeo("Aki Sasamoto: An Artist Walks into a Bar | Art21 “New York Close Up”", "https://vimeo.com/360656686");
 echo <<<EOT
 <html>
 <head>
@@ -36,8 +47,124 @@ echo <<<EOT
         <!-- Video Set 1 -->
         <div class="col-md-12">
            <button class="btn btn-primary mb-1" data-bs-toggle="collapse" data-bs-target="#videos1">Toggle Videos Set 1</button>
-            <div class="collapse" id="videos1">
+            <div class="collapse show" id="videos1">
                 <div class="row">
+                    <div class="col-md-4">
+                        <h6>{$vid1->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vid2->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vid3->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        {$vid1->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vid2->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vid3->getEmbedCode()}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <h6>{$vid4->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vid5->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vid6->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        {$vid4->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vid5->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vid6->getEmbedCode()}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <button class="btn btn-success mb-1" data-bs-toggle="collapse" data-bs-target="#videos2">Toggle Videos Set 2</button>
+            <div class="collapse" id="videos2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>{$vimeo1->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vimeo2->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vimeo3->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        {$vimeo1->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vimeo2->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vimeo3->getEmbedCode()}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <h6>{$vimeo4->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vimeo5->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vimeo6->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        {$vimeo4->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vimeo5->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vimeo6->getEmbedCode()}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <button class="btn btn-info mb-1" data-bs-toggle="collapse" data-bs-target="#videos3">Toggle Videos Set 3</button>
+            <div class="collapse" id="videos3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>{$vid1->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vid2->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{$vid3->getName()}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        {$vid1->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vid2->getEmbedCode()}
+                    </div>
+                    <div class="col-md-4">
+                        {$vid3->getEmbedCode()}
+                    </div>
+                </div>
+                <div class="row mt-4">
                     <div class="col-md-4">
                         <h6>{$vid1->getName()}</h6>
                     </div>
@@ -60,38 +187,7 @@ echo <<<EOT
             </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <!-- Video Set 2 -->
-        <div class="col-md-12">
-            <button class="btn btn-success mb-1" data-bs-toggle="collapse" data-bs-target="#videos2">Toggle Videos Set 2</button>
-            <div class="collapse" id="videos2">
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-            </div>
-            <div class="collapse" id="videos2">
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-            </div>
-        </div>
-    </div>
-    <div class="row mt-4">
-        <!-- Video Set 3 -->
-        <div class="col-md-12">
-            <button class="btn btn-info mb-1" data-bs-toggle="collapse" data-bs-target="#videos3">Toggle Videos Set 3</button>
-            <div class="collapse" id="videos3">
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-            </div>
-            <div class="collapse" id="videos3">
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-                {$vid1->getEmbedCode()}
-            </div>
-        </div>
-    </div>
+    -->
     <!-- Add more video sets here -->
 </div>
 
