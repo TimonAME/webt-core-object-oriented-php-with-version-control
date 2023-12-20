@@ -4,10 +4,12 @@ class Vimeo extends video
 {
     public function getEmbedCode(): string
     {
-        $url = $this->getSource();
+        $url = $this->getSource();          #https://vimeo.com/869687763
         $url = explode("/", $url);
-        $url = $url[3];
+        $url = $url[3];                     #869687763
 
-        return '<iframe src="https://player.vimeo.com/video/'. $url .'?h=cef5015f5e" width="425" height="239" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        #richtiger teil der url wird in iframe eingefügt
+        # width="425" height="239"
+        return '<iframe src="https://player.vimeo.com/video/'. $url .'?h=cef5015f5e" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
     }
 }

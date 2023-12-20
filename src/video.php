@@ -14,6 +14,7 @@ abstract class video implements VideoInterface
         $this->source = $source;
     }
 
+    #functionen von VideoInterface, getEmbedCode ist in Vimeo/Youtube
     public function getName(): string
     {
         return $this->name;

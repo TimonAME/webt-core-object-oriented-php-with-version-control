@@ -1,0 +1,19 @@
+{
+    "name": "timon/webt-core-object-oriented-php-with-version-control",
+    "description": "Advanced Basic Unit Test",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Timon\\WebtCoreObjectOrientedPhpWithVersionControl\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TimonAME",
+            "email": "timon-a@outlook.at"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "9.5"
+    }
+}

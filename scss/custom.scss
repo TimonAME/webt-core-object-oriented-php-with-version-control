@@ -1,29 +1,53 @@
 // installed npm i bootstrap@5.3.2
+// npm install -g node-sass
 // now we can import bootstrap into our custom.scss file
-// but no working yet
+// mit folgendem Befehl wird die custom.scss in custom.css umgewandelt
+// node-sass custom.scss custom.css
+// TODO: erkundigen welche Variablen geändert werden können
 
 // Custom.scss
 // Option A: Include all of Bootstrap
 
 // Include any default variable overrides here (though functions won't be available)
 
-//@import "../../node_modules/bootstrap/scss/bootstrap";
+//$blue: #336699;
 
-// Then add additional custom code here
+// Import Bootstrap SCSS components
+@import "../node_modules/bootstrap/scss/bootstrap";
+// Import Bootstrap SCSS components
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/buttons"; // Import buttons SCSS
 
-// Required
-@import "../../node_modules/bootstrap/scss/functions";
 
-// Default variable overrides
-$body-bg: #000;
-$body-color: #111;
+// Your custom variable overrides
+:root,
+[data-bs-theme="light"] {
+  --bs-body-bg: #00837c;
+}
 
-// Required
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
+// Custom button color overrides
+$btn-primary-color: #fff; // Text color
+$btn-primary-bg: #ff003b; // Background color
+$btn-primary-border: #000000; // Border color
 
-// Optional Bootstrap components here
-@import "../../node_modules/bootstrap/scss/root";
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-// etc
+// Apply changes to the primary button
+.btn-primary {
+  color: $btn-primary-color;
+  background-color: $btn-primary-bg;
+  border-color: $btn-primary-border;
+}
+
+// Change Bootstrap navbar background color
+$navbar-bg: #ea5151; // Change this to your desired navbar background color
+
+// Apply changes to the navbar
+.navbar {
+  background-color: $navbar-bg; // Set the background color for the navbar
+  // Other navbar styles
+}
